@@ -1,0 +1,7 @@
+#a:hover{
+    color:lightgray;
+    text-decoration:initial;
+}
+tr{
+    border-bottom: dashed 1px gray;
+}

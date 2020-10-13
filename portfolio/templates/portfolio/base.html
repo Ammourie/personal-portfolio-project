@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        {% load static %}
+        
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="{% static 'style.css'%}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mohammed</title>
+    </head>
+    <body>
+        <div class="text-center">
+        </div>
+        
+       <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+           <a href="{%url 'home'%}" class="navbar-brand">Home</a>
+           <a href="{% static 'tasf.txt'%}" target="_blank" class="navbar-brand" style="position: absolute;right:140px ;">Download</a>
+
+           <a href="https://twitter.com/Ammourie99" target="_blank" class="navbar-brand" style="position: absolute;right:70px ;">Twitter</a>
+           <a href="{% url 'blog:all_blogs'%}" class="navbar-brand" style="position: absolute;right:20px ;">Blog</a>
+
+       </nav>
+        {% block hello %}
+        
+        {% endblock hello %}
+       
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'portfolio/base.html' %}
+{% block hello %}
+<center><h1 class="alert alert-primary">Blogs</h1>
+<h2 style="background-color: lightcoral; width: 35%;padding: 10px; border-radius: 20px;">Ammourie wrote {{blogs.count }} blog{{ blogs.count|pluralize }}</h2>
+{% for blog in blogs %}
+<a href="{%url 'blog:detail' blog.id%}" id="a" >
+    <h2>{{blog.title}}</h2>
+</a>
+<h4 style="color: lightslategray;">----{{blog.date|date:'M-d-Y'|upper}}----</h4>
+<p style="word-wrap: normal;max-width: 50%;">{{blog.description|truncatechars:150|striptags}}</p>
+<hr style="max-width: 75%;">
+{%endfor%}
+</center>
+{% endblock hello %}

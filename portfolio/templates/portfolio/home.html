@@ -1,0 +1,40 @@
+{% extends "portfolio/base.html" %}
+
+{% block hello %}
+<h1 class="text-center alert alert-success">This is portfolio home</h1>
+{% load static %}
+<div class="text-center" style="padding: 40px;font-size: 25px;">
+    <img
+        src="{% static 'ph.jpg' %}"
+        style="padding-bottom: 10px;"
+        width="300"
+        S
+    >
+    <br>
+    This webpage is created by
+    <br>
+    <span style="font-weight: 500;">Mohammed Ammourie</span>
+</div>
+<h2 class="text text-center " style="padding: 10px;margin-left: 20px;">Projects</h2>
+<hr>
+<table>
+    {% for project in projects %}
+        {% if forloop.counter0|divisibleby:3 %}
+    <tr>
+        {% endif %}
+        <td style="padding : 10px; text-align: center;">
+            <h3>{{project.title}}</h3>
+            <p>{{project.description}}</p>
+            {%if project.url %}
+            <a href="{{project.url}}">
+                <img src="{{project.image.url}}" width="500">
+            </a>
+            {%else%}
+            <img src="{{project.image.url}}" width="500">
+            {%endif%}
+        </td>
+        
+        {%endfor%}
+</table>
+<br>
+{% endblock hello %}
